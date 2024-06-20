@@ -7,7 +7,7 @@ public class Test {
 		String[] arr = {"Hello", "Iterator", "Patterns"};
 		Iterator<String> iter = container.getIterator();
 
-		container.setStrArray(arr);
+		container.setArray(arr);
 
 		while (iter.hasNext()) {
 			System.out.println(iter.next());

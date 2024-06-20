@@ -2,15 +2,15 @@ package iterator.practice2;
 
 public class AnyContainer<T> implements Container<T> {
 
-	T[] strArray;
+	T[] array;
 
 	@Override
 	public Iterator<T> getIterator() {
 		return new AnyIterator();
 	}
 
-	public void setStrArray(T[] array) {
-		this.strArray = array;
+	public void setArray(T[] array) {
+		this.array = array;
 	}
 
 	private class AnyIterator implements Iterator<T> {
@@ -19,7 +19,7 @@ public class AnyContainer<T> implements Container<T> {
 
 		@Override
 		public boolean hasNext() {
-			if (index < strArray.length){
+			if (index < array.length){
 				return true;
 			}
 
@@ -27,9 +27,9 @@ public class AnyContainer<T> implements Container<T> {
 		}
 
 		@Override
-		public Object next() {
+		public T next() {
 			if (this.hasNext()){
-				return strArray[index++];
+				return array[index++];
 			}
 
 			return null;
